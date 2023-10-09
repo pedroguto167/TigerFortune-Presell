@@ -1,0 +1,341 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    background-image: url('../images/background.png');
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+    background-color: #d3271a;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d3271a;
+    background-image: url('../images/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem 0; /* Atualizado para afetar apenas a parte superior e inferior */
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Ajuste este valor conforme necessário */
+    margin-top: 150px;
+}
+
+iframe {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.game-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.banner {
+    margin-bottom: 1rem;
+    animation: levitate 4s ease-in-out infinite;
+}
+
+
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 4px;
+    margin-bottom: 1rem;
+}
+
+.board div {
+    width: 50px;
+    height: 50px;
+}
+
+.board img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.info {
+    margin-bottom: 1rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.status-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.status {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #00336a;
+    animation: fadeInOut 6s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    15%, 20% {
+        opacity: 1;
+    }
+}
+
+.generate-opportunity {
+    background-color: #4c6172;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem; /* Adicione esta linha */
+}
+
+.generate-opportunity:hover {
+    background-color: #37473a;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+
+input[type="email" i] {
+    padding: 10px 60px; /* Increase padding for a more comfortable typing space */
+    font-size: 16px; /* Make the font size a bit larger for better readability */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Slightly rounded corners */
+    outline: none; /* Remove the browser's default outline */
+}
+
+/* Improve the appearance when the input is in focus */
+input[type="email" i]:focus {
+    border-color: #0099cc; /* Make border color a light blue */
+    box-shadow: 0 0 8px #A8D1FF; /* Add a subtle blue glow */
+}
+
+/* Playpix Iframe */
+.playpix-iframe {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.flashes {
+    list-style: none;
+    padding-left: 0;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+}
+
+.flashes li {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.info {
+    background-color: #cce5ff;
+    color: #004085;
+    border: 1px solid #b8daff;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #0069d9;
+}
+
+input[type="submit"]:active {
+    background-color: #0056b3;
+}
+
+input[type="submit"]:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #00336a;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes levitate {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.hacking {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #00336a;
+    display: none;
+}
+.hacking-message {
+    display: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #535f56;
+    background-color: rgba(255, 255, 255, 0.3); /* Atualize esta linha */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #566659;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: blinking 1.2s infinite;
+}
+
+
+@keyframes blinking {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
+.button {
+    background-color: #18136f;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: .55rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem; /* Adicione esta linha */
