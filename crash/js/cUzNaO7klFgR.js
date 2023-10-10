@@ -1,0 +1,1 @@
+const randomNumber=(t,e)=>{const o=document.querySelector("div.generator-container h1"),n=document.querySelector("div.generator-container button");let r;n.onclick=()=>{n.classList.toggle("sort"),r=setInterval((()=>{o.textContent=Math.floor(Math.random()*(t+1))}),25),setTimeout((()=>{n.classList.toggle("sort"),clearInterval(r)}),e)}};window.onload=randomNumber(10,1e3);
